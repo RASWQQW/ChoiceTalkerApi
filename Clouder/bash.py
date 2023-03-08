@@ -3,22 +3,24 @@ import random
 import datetime
 import shutil
 from typing import Optional
+from Cupa import Cupa
 
-class Basher(object):
+class Basher(Cupa):
     def __new__(cls, **kwargs):
         if not hasattr(cls, 'instance'):
             cls.instance = super(Basher, cls).__new__(cls)
         return cls.instance
 
     def __init__(self, filepath: Optional[str], username: Optional[str], *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.filepath = filepath
         self.username = username
-        
+    
 
     def gitexec(self):
         commands = [
             "python -V", # To check python version
-            "cd hubCl",
+            f"cd {self.gitpath}",
             "git add .",
             f'git commit -m "{self.username}{random.randint(1, 100)}{datetime.datetime.now()}" ', # set certain commit text relatively
             "git push -u origin main",

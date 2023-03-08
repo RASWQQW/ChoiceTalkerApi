@@ -2,6 +2,7 @@ import asyncio
 from typing import List
 from flask import Flask, jsonify, request
 from werkzeug.utils import secure_filename
+from Cupa import Cupa
 from testFor import Manager
 import datetime
 from datetime import datetime as dt
@@ -34,8 +35,9 @@ def Home(username: str):
                 
                 # currentFileName = elIn.filename; #sec_filename = secure_filename(elIn)
                 filename = f"{gettingpermission[1][0]}{username}{str(dt.now().strftime('%m.%d.%Y.%S'))}.{gettingpermission[1][1]}" #giving appropriate filename
-                fileIsOn = __file__.replace(os.path.basename(__file__), f"hubCl\\files\\{username}") # saving a file path
-                
+                # fileIsOn = __file__.replace(os.path.basename(__file__), f"hubCl\\files\\{username}") # saving a file path
+                fileIsOn = Cupa().gitpath + f"\\files\\{username}"
+
                 try: os.mkdir(fileIsOn)
                 except Exception as e: print(e)
                 
