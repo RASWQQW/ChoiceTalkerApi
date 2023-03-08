@@ -34,7 +34,7 @@ class Basher(Cupa):
             # shutil.rmtree(self.filepath)
             files = os.listdir(self.filepath)
             self.logManager(files)
-            for file in files: os.remove(os.path(self.filepath).join(file))
+            for file in files: os.remove(os.path.join(self.filepath, file))
 
     def logManager(self, files):
         border = "_" * 100        
