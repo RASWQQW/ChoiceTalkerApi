@@ -27,8 +27,7 @@ class Basher(Cupa):
         ]
         for command in commands:
             os.system(f"cmd /c {command}")
-
-        self.FileManager()
+        # self.FileManager()
 
     def FileManager(self):
             # shutil.rmtree(self.filepath)
