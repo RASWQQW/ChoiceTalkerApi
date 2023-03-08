@@ -38,7 +38,7 @@ class Basher(Cupa):
 
     def logManager(self, files):
         border = "_" * 100        
-        with open("Clouder/logs/log.txt", "a") as logsource:
+        with open("logs/log.txt", "a") as logsource:
            logsource.write(border+'\n'+str(datetime.datetime.now())+'\n'.join(files)+'\n'+border)
 
 
