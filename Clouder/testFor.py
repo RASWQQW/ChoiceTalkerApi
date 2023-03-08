@@ -41,7 +41,7 @@ class Manager(object):
 
             # totally to add and push files in hubCL
             async def BashManager():
-                await Basher(username=username, filepath=path).gitexec() # to give a order to push ready files from current
+                Basher(username=username, filepath=path).gitexec() # to give a order to push ready files from current
                 
             tasks = [FileSender(), BashManager()]
 
